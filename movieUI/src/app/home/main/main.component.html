@@ -1,0 +1,87 @@
+<nz-layout>
+  <nz-header class="flex flex-l-end header">
+    <!-- top function bar -->
+    <div class = "fbShare">
+    <fb-like url={{url}}></fb-like>
+    </div>
+    <div class = "twShare">
+    <tweet url={{url}} text={{text}}></tweet>
+    </div>
+    <hr><span id = "welcomeMsg">Welcome to the Movie World</span><hr>
+    <button nz-button nzType="primary" id="searchBtn" [routerLink]="['search']">Search</button>
+    <button nz-button nzType="primary" (click)="openRegMinModal('open')" *ngIf='!email'>Register</button>
+    <button nz-button nzType="primary" (click)="openLoginMinModal()" *ngIf='!email'>Login</button>
+    <a class="a" (click)="home()">Home</a>
+    <nz-dropdown [nzPlacement]="'bottomCenter'" *ngIf='email'>
+
+      <!-- drop down list -->
+      <div class="drop" nz-dropdown >
+          <span>{{email}}</span>
+        <nz-avatar
+          [nzShape]="'square'"
+          [nzSize]="'large'"
+          nzIcon="anticon anticon-user"
+          nzSrc="../../../assets/image/user.gif"
+        ></nz-avatar>
+      </div>
+      <ul nz-menu>
+          <li nz-menu-item (click)="openRegMinModal('edit')">
+              <i class="anticon anticon-logout"></i> Edit User Info
+            </li>
+          <li nz-menu-item (click)="openChangePwdModal()">
+              <i class="anticon anticon-logout"></i> Change Password
+            </li>
+            <li nz-menu-item (click)="likeList()">
+              <i class="anticon anticon-logout"></i> Like List
+            </li>
+          <li nz-menu-item (click)="logOut()">
+            <i class="anticon anticon-logout"></i> LogOut
+          </li>
+
+      </ul>
+    </nz-dropdown>
+  </nz-header>
+
+  <!-- Google Map function -->
+  <nz-layout>
+    <div class="content"><router-outlet></router-outlet></div>
+    <div class="gmap">
+      <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
+        <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)='markerDragEnd($event)'>
+            <agm-info-window [isOpen]="true">
+                <strong>{{agmInfo}}</strong>
+              </agm-info-window>
+        </agm-marker>
+      </agm-map>
+      <div class="container-fluid">
+        <div class='row'>
+          <div class="form-group">
+            <label class='col-sm-2'>Address: &nbsp;&nbsp;</label>
+            <input class='col-sm-10' type='text' [(ngModel)]='location.address_level_1' class="form-control"
+            placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" #search [formControl]="searchControl"/>
+          </div><br>
+          <div class="form-group">
+            <label class='col-sm-2'>City: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class='col-sm-10'  [(ngModel)]='location.address_level_2' class='form-control'/>
+          </div><br>
+
+          <div class="form-group">
+            <label class='col-sm-2'>State: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class='col-sm-10'  [(ngModel)]='location.address_state' class='form-control'/>
+          </div><br>
+
+          <div class="form-group">
+            <label class='col-sm-2'>Zip code: &nbsp;&nbsp;</label>
+            <input class='col-sm-10'  [(ngModel)]='location.address_zip' class='form-control' />
+          </div><br>
+
+          <button (click)='updateOnMap()' type="submit" class="btn btn-primary">1. Find My Location</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class='searchBtn' (click)='findTheater()' type="submit">2. Find Theater Near Me</button>
+        </div>
+      </div>
+    </div>
+  </nz-layout>
+</nz-layout>
+
+

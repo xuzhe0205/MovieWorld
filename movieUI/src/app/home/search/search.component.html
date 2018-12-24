@@ -1,0 +1,37 @@
+
+
+
+
+
+<div class="search">
+
+    <input id="keyword" #inputTxt type="text" name="keyword" placeholder="Input the movie title...">
+    <button id="searchBtn" (click)="search(inputTxt.value)">Search</button>
+</div>
+<div class="searchResult">
+
+  <div class="search-item" *ngFor="let searchItem of searchObj"  >
+      <b class="resultTxt">Search result:</b>
+        <img class="search-item-img" [src]="searchItem.image" alt="" routerLink="/home/details/{{searchItem._id}}">
+        <p class="search-item-title">{{searchItem.title}}</p>
+        <p class="search-item-channel">{{searchItem.score}}
+        <i class="anticon anticon-heart-o i" (click)="like(searchItem._id)" *ngIf="!searchItem.isLike"></i>
+        <i class="anticon anticon-heart " *ngIf="searchItem.isLike"></i>
+        </p>
+        <!-- <p><button class="list-item-button" nz-button nzType="primary" [routerLink]="['detail']" >Detail</button>
+          </p> -->
+
+
+          <p class="search-item-footer">
+          </p>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+

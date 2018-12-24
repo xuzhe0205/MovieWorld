@@ -1,0 +1,31 @@
+<!--Display the Moive Detail -->
+<div class="itemDetail" *ngFor="let item of item">
+
+  <!--Display the Moive Name -->
+  <div class="header">
+    <div><h2>{{item.title}}</h2></div>
+  </div>
+
+  <!--Display the Moive information -->
+  <div class="content">
+    <!--Display the Moive Picture -->
+    <div class="image">
+      <img [src]="item.image">
+    </div>
+
+  <!--Display the Moive Description & Score -->
+  <div class="word">
+    <dt id="desTitle">Director:</dt>
+    <dd id="director">{{item.director}}</dd>
+    <dt id="desTitle">Stars:</dt>
+    <dd id="stars">{{item.stars}}</dd>
+    <dt id="desTitle">Description:</dt>
+    <dd>{{item.description}}</dd>
+    <dt id="scoreTitle">Score:</dt>
+    <dd id="score">{{item.score}}</dd>
+    <dd class="anticon anticon-heart-o i" (click)="like(item._id)" *ngIf="!item.isLike"></dd>
+    <dd class="anticon anticon-heart " *ngIf="item.isLike"></dd>
+  </div>
+</div>
+
+<button nz-button nzType="primary" [routerLink]="['']" >HOME</button>

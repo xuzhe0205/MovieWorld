@@ -1,0 +1,61 @@
+{
+  "name": "merculet-admin",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "apidoc": "^0.17.6",
+    "apidoc-plugin-json": "^0.0.3",
+    "conventional-changelog-cli": "^2.0.1",
+    "egg": "^2.9.1",
+    "egg-bcrypt": "^1.1.0",
+    "egg-console": "^2.0.1",
+    "egg-cors": "^2.0.0",
+    "egg-i18n": "^2.0.0",
+    "egg-jwt": "^3.0.0",
+    "egg-mongoose": "^3.1.0",
+    "egg-multiple-static": "^0.2.1",
+    "egg-scripts": "^2.6.0",
+    "egg-validate": "^1.0.0",
+    "egg-view-ejs": "^2.0.0",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "egg-bin": "^4.7.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.17.2",
+    "eslint": "^5.0.0",
+    "eslint-config-egg": "^7.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start-test": "EGG_SERVER_ENV=dev egg-scripts start  --title=egg-server-node-egg",
+    "start-prod": "EGG_SERVER_ENV=prod egg-scripts start  --title=egg-server-node-egg",
+    "stop": "egg-scripts stop --title=egg-egg-server-node-egg",
+    "dev": "egg-bin dev --fix  --host=0.0.0.0 --DEBUG=common-bin",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "xuhang",
+  "license": "MIT"
+}

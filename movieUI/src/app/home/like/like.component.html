@@ -1,0 +1,28 @@
+<div class="main">
+
+
+      <div class="list">
+        <ul class="list-item" *ngFor="let item of list"  >
+          <li>
+          <img [src]="item.image" alt="" routerLink="/home/details/{{item._id}}">
+          <div class="list-item-title">{{item.title}}
+            <div class="list-item-stars">{{item.stars}}
+
+            </div>
+          </div>
+
+          <div class="list-item-channel">{{item.score}}
+
+              <i class="anticon anticon-close-circle-o i" (click)="removeLike(item._id)"></i>
+          </div>
+
+         <!-- <p><button class="list-item-button" nz-button nzType="primary" [routerLink]="['detail']" >Detail</button>
+          </p>-->
+          <div class="list-item-footer">
+          </div>
+          </li>
+
+        </ul>
+      </div>
+
+  </div>

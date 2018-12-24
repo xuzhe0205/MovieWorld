@@ -1,0 +1,33 @@
+<div class="main">
+  <nz-carousel nzAutoPlay>
+    <div nz-carousel-content *ngFor="let item of array">
+      <img [src]="item.image" />
+    </div>
+  </nz-carousel>
+
+  <div class="category">
+    <div class="category-left">Type :</div>
+    <div class="category-right">
+      <div
+        class="category-right-item"
+        *ngFor="let item of categoryList; let i = index"
+        (click)="clickCategory(item, i)"
+        [ngClass]="{ active: item.isActive }"
+      >
+        {{ item.category_name }}
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="list-item" *ngFor="let item of list"  >
+      <!--Go to details upon clicking on the image-->
+      <img [src]="item.image" alt="" routerLink="/home/details/{{item._id}}">
+      <p class="list-item-title">{{item.title}}</p>
+      <p class="list-item-channel"><span class = "rating" (click) = "openChangeRateModal(item._id)">{{item.score}}</span>&nbsp;
+      <i class="anticon anticon-heart-o i" (click)="like(item._id)"
+      *ngIf="!item.isLike"></i>
+      <i class="anticon anticon-heart " *ngIf="item.isLike"></i>
+      <p class="list-item-footer"></p>
+    </div>
+  </div>
+</div>

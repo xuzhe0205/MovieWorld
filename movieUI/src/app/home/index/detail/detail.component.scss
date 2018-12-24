@@ -1,0 +1,56 @@
+//import the common variable
+@import "../../common";
+
+//define the variable
+$detail-title-size:40px;
+
+
+body {
+  width: 140px;
+  margin: 0px;
+  display:flex;
+}
+
+//using nesting & variable calucation to organize the variable
+//style the detail div
+.itemDetail {
+  width: $list-item-img-width *6.5;
+  border: 5px solid $page-header-color;
+  border-style: dotted solid;
+  padding: $list-item-img-width /3;
+  margin: 25px 25px 25px 25px;
+  margin-left: auto;
+  margin-right: auto;
+  .header{
+    font-family: $font-welcome;
+    font-size: $detail-title-size;
+    width: 1400px;
+  }
+  .content{
+    .image{
+      margin: 10px 10px 5px 15px ;
+      img {
+      width: $list-item-img-width *2.5;
+      height: $list-item-img-length *2.5;
+      float: right;
+      }
+    }
+    .word{
+      margin: $list-item-img-width *0.025;
+      font-size: $detail-title-size /2;
+      width: $list-item-img-width *4.5;
+      padding-right: $list-item-img-width ;
+      #desTitle{
+        font-size: $detail-title-size *0.8;
+        font-weight:bold;
+      }
+      #scoreTitle{
+        @extend  #desTitle;
+      }
+      #score{
+        color: $item-score-color;
+        font-size: $detail-title-size *2;
+      }
+    }
+  }
+}
