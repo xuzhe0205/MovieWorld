@@ -98,6 +98,38 @@ This project uses "mongoDB", "NodeJS" on back end, and "Angular Cli 6" on the fr
 Navigate to http://localhost:4200/ in your browser to start the web
 
 
+## Web App Walk Tour
+
+
+	1. Users can sign up and log in
+	
+	
+![login](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/login.png)
+
+	2. Users can manage their account after they logged in. Also, if users really want to share their enthusiasm and comment on some movies, they can share them to their favorite social medias (Facebook, Twitter), or just leave a like on the upper-left corner on our website if they really enjoy the experience!
+
+![after](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/after.png)
+	
+
+	3. On the main page, users can browse movies lists with scrolling and also by selecting specific movie genres, and mark a "like" to the movies they like. e.g. I like Superheroes movies, so I "liked" them and kept them into my like list
+	
+![mp](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/mp.png)
+
+	4. Users can go see what are the movies they have collected, and maybe remove them as well.
+
+![like](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/like.png)
+
+
+	5. Users can go to their locations or draging the pin on the map or just directly type in their addresses to explore the neighborhood. Users can also use the button '''Find theatre near me''' to find the movie theatre near them, and go see the movies they enjoy!
+	
+![movie1](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/movie1.png)
+![movie2](https://raw.githubusercontent.com/xuzhe0205/MovieWorld/master/assets/movie2.png)
+
+
+	
+
+
+
 ## Acknowledgments
 
 * W3Schools
