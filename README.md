@@ -98,7 +98,7 @@ This project uses "mongoDB", "NodeJS" on back end, and "Angular Cli 6" on the fr
 Navigate to http://localhost:4200/ in your browser to start the web
 
 
-## Web App Walk Tour
+## Web App Tour
 
 
 	1. Users can sign up and log in
